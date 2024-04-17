@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dhrn51tnj2pjv"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Components/FlyComponent.gd" id="1_tjb4f"]
+
+[node name="FlyComponent" type="Node"]
+script = ExtResource("1_tjb4f")

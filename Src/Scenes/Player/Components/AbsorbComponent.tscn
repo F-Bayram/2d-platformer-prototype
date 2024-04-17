@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://tby03x6rytag"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Components/AbsorbComponent.gd" id="1_1ltuo"]
+
+[node name="AbsorbComponent" type="Node"]
+script = ExtResource("1_1ltuo")

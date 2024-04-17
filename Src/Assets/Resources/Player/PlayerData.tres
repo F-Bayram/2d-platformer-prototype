@@ -1,0 +1,6 @@
+[gd_resource type="Resource" script_class="PlayerData" load_steps=2 format=3 uid="uid://bn20h71wqe781"]
+
+[ext_resource type="Script" path="res://Assets/Resources/Player/PlayerData.gd" id="1_utcxy"]
+
+[resource]
+script = ExtResource("1_utcxy")

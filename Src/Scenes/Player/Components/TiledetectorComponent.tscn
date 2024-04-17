@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7ef0ol1kax0i"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Components/TiledetectorComponent.gd" id="1_p2lr6"]
+
+[node name="TiledetectorComponent" type="Node"]
+script = ExtResource("1_p2lr6")

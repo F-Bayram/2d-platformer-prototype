@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3b0won5yafqa"]
+
+[ext_resource type="Script" path="res://Scripts/Player/States/PlayerAir.gd" id="1_l8pw3"]
+
+[node name="PlayerAir" type="Node"]
+script = ExtResource("1_l8pw3")

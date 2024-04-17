@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dacebufvgkk6a"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Components/TileselectorComponent.gd" id="1_dlq17"]
+
+[node name="TileselectorComponent" type="Node"]
+script = ExtResource("1_dlq17")

@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://drnuq0ifco515"]
+
+[ext_resource type="Script" path="res://Scripts/Player/States/PlayerMove.gd" id="1_pna27"]
+
+[node name="PlayerMove" type="Node"]
+script = ExtResource("1_pna27")

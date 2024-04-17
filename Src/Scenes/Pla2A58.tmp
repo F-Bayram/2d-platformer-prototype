@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://7n6fnieufqrj"]
+
+[ext_resource type="Script" path="res://Scripts/Player/Player.cs" id="1_eibr7"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerController.cs" id="2_q1tv0"]
+[ext_resource type="Script" path="res://Scripts/Player/PlayerDebug.cs" id="3_voytf"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0mppk"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t7tde"]
+albedo_color = Color(0.94902, 0.168627, 0.517647, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_adaye"]
+material = SubResource("StandardMaterial3D_t7tde")
+
+[sub_resource type="GDScript" id="GDScript_b3ye5"]
+
+[node name="Player" type="Node3D"]
+script = ExtResource("1_eibr7")
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+collision_layer = 2
+collision_mask = 5
+script = ExtResource("2_q1tv0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_0mppk")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D/CollisionShape3D"]
+mesh = SubResource("CapsuleMesh_adaye")
+skeleton = NodePath("../../..")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 10)
+top_level = true
+script = SubResource("GDScript_b3ye5")
+
+[node name="Canvas" type="Control" parent="." node_paths=PackedStringArray("_controller", "_waterfill")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_voytf")
+_controller = NodePath("../CharacterBody3D")
+_waterfill = NodePath("VBoxContainer/Waterfill/Label")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Canvas"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Waterfill" type="MarginContainer" parent="Canvas/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="Label" type="Label" parent="Canvas/VBoxContainer/Waterfill"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
